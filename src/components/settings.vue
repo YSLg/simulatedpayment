@@ -42,7 +42,7 @@ export default {
   methods: {
     onSubmit( values ) {
       sessionStorage.setItem('accountInfo', JSON.stringify(values))
-      this.$router.push('/')
+      this.$router.push('/play')
     }
   }
 }

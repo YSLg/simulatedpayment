@@ -9,8 +9,8 @@ import { Button, Form, Field, CellGroup } from 'vant';
 import 'vant/lib/index.css';
 
 const routes = [
-    { path: '/', component: Play },
-    { path: '/settings', component: Settings },
+    { path: '/', component: Settings },
+    { path: '/play', component: Play },
   ]
   const router = createRouter({
     history: createWebHashHistory(),

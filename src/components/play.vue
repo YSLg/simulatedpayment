@@ -6,11 +6,11 @@
             <span class="iconfontText">支付成功</span>
             </div>
             <div class="accountName">
-                {{ accountInfo.accountName }}
+                {{ accountInfo.accountName || '--' }}
             </div>
             <div style="position: relative;">
                 <span class="iconfont icon-weibiaoti- weibiaoti"></span>
-                <span class="weibiaotiText">{{ accountInfo.paymentAmount }}</span>
+                <span class="weibiaotiText">{{ accountInfo.paymentAmount || '--' }}</span>
             </div>
         </div>
         <div class="buttonBox">
@@ -33,12 +33,14 @@
     },
     methods:{
       complete(){
-        this.$router.push('/settings')
+        this.$router.push('/')
       }
     },
     mounted(){
         const accountInfo = sessionStorage.getItem('accountInfo')
-        this.accountInfo = JSON.parse(accountInfo)
+        if (accountInfo) {
+            this.accountInfo = JSON.parse(accountInfo)
+        }
     }
   }
   </script>
